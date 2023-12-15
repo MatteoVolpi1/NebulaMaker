@@ -1,0 +1,3 @@
+lighthouse: 192.168.100.1, 192.168.1.4:4242
+Laptop1,192.168.100.5/24,security_group_2
+Server1,192.168.100.9/24,security_group_1

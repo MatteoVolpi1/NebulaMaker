@@ -1,0 +1,34 @@
+# PKI paths
+pki:
+  ca: /etc/nebula/ca.crt
+  cert: /etc/nebula/host.crt
+  key: /etc/nebula/host.key
+
+# Need a static host map, using the DNS name of the lighthouse
+static_host_map:
+  $nebula_lighthouse_ip: ['$real_lighthouse_ip:$real_lighthouse_port']
+
+static_map:
+  network: ip4
+
+# Lighthouse config for clients
+lighthouse:
+  hosts:
+    - '$nebula_lighthouse_ip'
+
+#Listen
+listen:
+  host: '[::]'
+  port: 0
+
+#Firewall settings
+firewall:
+  outbound:
+    - port: any
+      proto: any
+      host: any
+
+  inbound:
+    - port: any
+      proto: any
+      # groups will be dynamically added here
